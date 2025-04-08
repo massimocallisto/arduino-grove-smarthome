@@ -9,8 +9,8 @@
 #define BUZZER_PIN 5
 
 #define B 3975
-#define LIGHT_THRESHOLD 300
-#define SOUND_THRESHOLD 600
+#define LIGHT_THRESHOLD 50
+#define SOUND_THRESHOLD 1
 
 
 bool alarmActive = false;
@@ -125,7 +125,7 @@ void loop() {
 
   // Allarme attivo con suono eccessivo
   int soundLevel = analogRead(SOUND_SENSOR);
-  if (alarmActive && SOUND_THRESHOLD > 600) {
+  if (alarmActive && soundLevel < SOUND_THRESHOLD) {
     play_alarm();
   }
 
