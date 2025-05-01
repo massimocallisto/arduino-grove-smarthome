@@ -4,10 +4,9 @@
 
 
 void setup() {
-  Wire.begin(18, 19);  // SDA = 21, SCL = 22
+Wire.begin(18, 19); // SDA = 21, SCL = 22
   Serial.begin(115200);
-  while (!Serial)
-    ;  // attende la connessione Serial Monitor
+  while (!Serial); // attende la connessione Serial Monitor
   Serial.println("\nScanner I2C avviato...");
 }
 
@@ -39,5 +38,5 @@ void loop() {
   else
     Serial.println("Scansione completata.");
 
-  delay(5000);  // nuova scansione ogni 5 secondi
+  delay(5000); // nuova scansione ogni 5 secondi
 }
